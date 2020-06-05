@@ -9,7 +9,7 @@ def setup():
 
 def servo(graden):
     graden = int(graden)
-    duty_cycle = (0.54 + (graden / 203) * 1.93) / 1000          # voor elke servo anders
+    duty_cycle = (0.54 + (graden / 203) * 1.93) / 1000          # voor elke servo anders min 540, max 2470
     GPIO.output(servo_pin, GPIO.HIGH)
     time.sleep(duty_cycle)
     GPIO.output(servo_pin, GPIO.LOW)
