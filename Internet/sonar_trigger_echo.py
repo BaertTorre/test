@@ -69,7 +69,7 @@ class ranger:
          self.pi.gpio_trigger(self._trig)
          start = time.time()
          while not self._ping:
-            if (time.time()-start) > 5.0:
+            if (time.time()-start) > 0.02:
                return 20000
             time.sleep(0.001)
          return self._time
@@ -97,7 +97,7 @@ if __name__ == "__main__":
 
    pi = pigpio.pi()
 
-   sonar = sonar_trigger_echo.ranger(pi, 23, 18)
+   sonar = sonar_trigger_echo.ranger(pi, 26, 19)
 
    end = time.time() + 600.0
 
