@@ -1,6 +1,6 @@
 import serial
 
-ser = serial.Serial('/dev/serial0')     # open serial port (serial0 is altijd de seriele poort en geen bluetooth ongeacht de config)
+ser = serial.Serial('/dev/ttyS0')     # open serial port (serial0 is altijd de seriele poort en geen bluetooth ongeacht de config)
 
 class Esp8266:
     @staticmethod
@@ -13,3 +13,5 @@ class Esp8266:
         ser.write(b'LDR')                     # write a string de 'b' zorgt ervoor dat de tekst gecodeert wordt in bytes
         data = Esp8266.read_serial()
         return data
+
+print(Esp8266.read_LDR())
